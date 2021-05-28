@@ -1,9 +1,8 @@
 package viking.movestrategy;
 
-public class Fly implements Move {
-
+public class Walk implements Move {
     @Override
     public int move(int initialPosition) {
-        return initialPosition + 10;
+        return initialPosition + 1;
     }
 }

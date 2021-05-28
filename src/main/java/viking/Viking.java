@@ -1,14 +1,14 @@
 package viking;
 
-import viking.movestrategy.Fly;
 import viking.movestrategy.Move;
+import viking.movestrategy.StandStill;
 
 public class Viking {
     private int position;
-    private Fly moveStrategy;
+    private Move moveStrategy;
 
     public Viking() {
-        this.moveStrategy = null;
+        this.moveStrategy = new StandStill();
         this.position = 0;
     }
 
@@ -17,11 +17,10 @@ public class Viking {
     }
 
     public void move() {
-        if (moveStrategy == null) this.position += 1;
-        else this.position += moveStrategy.move();
+        this.position = moveStrategy.move(position);
     }
 
-    public void setMoveStrategy(Fly fly) {
-        this.moveStrategy = fly;
+    public void setMoveStrategy(Move move) {
+        this.moveStrategy = move;
     }
 }
