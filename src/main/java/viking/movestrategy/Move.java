@@ -1,5 +1,7 @@
 package viking.movestrategy;
 
+import viking.Viking;
+
 public interface Move {
-    int move(int initialPosition);
+    void move(Viking viking);
 }

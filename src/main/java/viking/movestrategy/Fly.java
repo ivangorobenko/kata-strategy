@@ -1,9 +1,11 @@
 package viking.movestrategy;
 
+import viking.Viking;
+
 public class Fly implements Move {
 
     @Override
-    public int move(int initialPosition) {
-        return initialPosition + 10;
+    public void move(Viking viking) {
+        viking.setPosition(viking.getPosition() + 10);
     }
 }

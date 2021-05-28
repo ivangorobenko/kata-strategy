@@ -16,8 +16,12 @@ public class Viking {
         return position;
     }
 
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
     public void move() {
-        this.position = moveStrategy.move(position);
+        moveStrategy.move(this);
     }
 
     public void setMoveStrategy(Move move) {

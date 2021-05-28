@@ -1,8 +1,10 @@
 package viking.movestrategy;
 
+import viking.Viking;
+
 public class Walk implements Move {
     @Override
-    public int move(int initialPosition) {
-        return initialPosition + 1;
+    public void move(Viking viking) {
+        viking.setPosition(viking.getPosition() + 1);
     }
 }
