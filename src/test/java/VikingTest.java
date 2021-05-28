@@ -71,4 +71,19 @@ public class VikingTest {
         // Assert
         assertEquals(11, sut.getPosition());
     }
+
+    @Test
+    @DisplayName("doit appeler la stratégie de mouvement spécifique quand le viking marche")
+    void shouldCallSpecificStrategyWhenVikingMoved() {
+        // Arrange
+        Viking sut = new Viking();
+        AtomicBoolean called = new AtomicBoolean(false);
+        sut.setMoveStrategy(a -> called.set(true));
+
+        // Act
+        sut.move();
+
+        // Assert
+        assertEquals(true, called.get());
+    }
 }
